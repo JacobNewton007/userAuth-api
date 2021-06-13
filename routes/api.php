@@ -22,7 +22,7 @@ Route::get('/users', [UserController::class, 'getAllUser']);
 
 // protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
-  Route::post('/logout', [AuthController::class, 'logout']);
+  Route::post('/logout', [UserController::class, 'logout']);
   Route::put('/user/{id}', [UserController::class, 'updateUser']);
   Route::get('/user/{id}', [UserController::class, 'getUserById']);
   Route::delete('/user/{id}', [UserController::class, 'deleteUser']); 
